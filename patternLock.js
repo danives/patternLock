@@ -211,9 +211,10 @@
                 remX = xi % plotLn,
                 remY = yi % plotLn;
 
-            if (qsntX <= matrix[1] && qsntY <= matrix[0] && remX > margin * 2 && remY > margin * 2) {
+            if (qsntX <= matrix[1] && qsntY <= matrix[0] && remX > margin * 2.8 && remY > margin * 2.8) {
                 idx = (qsntY - 1) * matrix[1] + qsntX;
             }
+
             return {
                 idx: idx,
                 i: qsntX,
@@ -248,7 +249,7 @@
                 //to fix line
                 var lA = getLengthAngle(_this.lineX1, newX, _this.lineY1, newY);
                 _this.line.css({
-                    'width': (lA.length + 10) + 'px',
+                    'width': (lA.length + 6) + 'px',
                     'transform': 'rotate(' + lA.angle + 'deg)'
                 });
 
@@ -257,7 +258,7 @@
 
 
             //to create new line
-            var line = $('<div class="patt-lines" style="top:' + (newY - 5) + 'px; left:' + (newX - 5) + 'px"></div>');
+            var line = $('<div class="patt-lines" style="top:' + (newY - 2) + 'px; left:' + (newX - 2) + 'px"></div>');
             _this.line = line;
             _this.lineX1 = newX;
             _this.lineY1 = newY;
